@@ -1,0 +1,62 @@
+/* Base page */
+html, body, #root {
+  background: var(--bdx-bg) !important;
+  color: var(--bdx-text) !important;
+}
+
+/* Generic containers/cards */
+div, section, article, aside, header, main, nav {
+  color: var(--bdx-text) !important;
+}
+
+/* Cards / posts */
+article, [data-testid="homeScreenFeedTab"], [data-testid="post"], [data-testid="card"], .card, .post {
+  background: var(--bdx-panel) !important;
+  border-color: var(--bdx-border) !important;
+  color: var(--bdx-text) !important;
+  border-radius: var(--bdx-card-radius) !important;
+}
+
+/* Links */
+a, a * {
+  color: var(--bdx-link) !important;
+  text-decoration-color: rgba(0,0,0,0.08) !important;
+}
+
+/* Buttons and inputs */
+button, input, textarea, select {
+  background: transparent !important;
+  color: var(--bdx-text) !important;
+  border-color: var(--bdx-border) !important;
+}
+
+/* Muted text */
+small, .muted, [data-muted="true"], span, p {
+  color: var(--bdx-muted) !important;
+}
+
+/* Accents */
+.header, .nav, .btn-primary, [data-accent="true"] {
+  background: linear-gradient(90deg, rgba(0,0,0,0), var(--bdx-accent)) !important;
+}
+
+/* Avatars/borders */
+img, .avatar, .profile-image {
+  outline-color: var(--bdx-border) !important;
+}
+
+/* Scrollbars (Firefox) */
+* {
+  scrollbar-color: var(--bdx-border) var(--bdx-panel);
+}
+
+/* Improve contrast for interactive elements */
+a:hover, button:hover {
+  filter: brightness(1.05) !important;
+}
+
+/* Ensure code blocks / pre are readable */
+pre, code, kbd {
+  background: rgba(0,0,0,0.04) !important;
+  color: var(--bdx-text) !important;
+}

@@ -1,0 +1,10 @@
+:root {
+  --bdx-bg: #282828;
+  --bdx-panel: #32302f;
+  --bdx-muted: #a89984;
+  --bdx-text: #ebdbb2;
+  --bdx-accent: #fb4934;
+  --bdx-link: #83a598;
+  --bdx-border: #3c3836;
+  --bdx-card-radius: 12px;
+}

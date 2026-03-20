@@ -1,0 +1,28 @@
+{
+  "name": "bsky-painter",
+  "version": "1.0.0",
+  "description": "An extension to customize bluesky appearance",
+  "keywords": [
+    "firefox",
+    "zen",
+    "bluesky",
+    "bsky",
+    "theme"
+  ],
+  "license": "GPL-3.0-only",
+  "author": "Andrea Coronese <sixpounder@protonmail.com>",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "package": "web-ext build --source-dir ./dist",
+    "run:browser": "web-ext run --devtools --source-dir ./dist",
+    "build": "rolldown --config"
+  },
+  "devDependencies": {
+    "@types/firefox-webext-browser": "^143.0.0",
+    "@web/rollup-plugin-copy": "^0.5.1",
+    "rolldown": "^1.0.0-rc.10",
+    "typescript": "^5.9.3",
+    "web-ext": "^10.0.0"
+  }
+}

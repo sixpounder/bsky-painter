@@ -1,0 +1,10 @@
+:root {
+  --bdx-bg: #0f1724;        /* night background (deep navy) */
+  --bdx-panel: #111827;     /* slightly lighter panel */
+  --bdx-muted: #7c88a3;     /* muted text (cool gray-blue) */
+  --bdx-text: #cbd6f0;      /* main text (soft off-white/blue) */
+  --bdx-accent: #7aa2f7;    /* soft blue accent */
+  --bdx-link: #7de3ff;      /* cyan-ish link */
+  --bdx-border: #18202b;    /* borders */
+  --bdx-card-radius: 10px;
+}

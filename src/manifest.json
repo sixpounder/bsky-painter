@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Bsky Painter",
+  "version": "1.1",
+  "description": "Apply custom themes (Gruvbox, Tokyo Night and others) to bsky.app",
+  "permissions": ["storage", "activeTab", "scripting"],
+  "host_permissions": ["*://bsky.app/*"],
+  "action": {
+    "default_title": "Bsky Theme",
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "icons": {
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://bsky.app/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["themes/*.css", "icons/*"],
+      "matches": ["*://bsky.app/*"]
+    }
+  ]
+}
