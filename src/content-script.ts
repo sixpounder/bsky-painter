@@ -60,6 +60,7 @@ async function init(): Promise<void> {
 init();
 
 browser.runtime.onMessage.addListener((msg: any) => {
+  console.log(msg);
   if (msg && msg.type === "set-theme") {
     applyThemeVars(msg.theme);
     browser.storage.local.set({ theme: msg.theme });

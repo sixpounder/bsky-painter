@@ -1,0 +1,17 @@
+:root {
+  --bdx-primary: #79a1f7;
+  --bdx-primary-dimmed: #a8c2fa;
+  --bdx-primary-alt: #bb9af7;
+  --bdx-secondary: #202035;
+  --bdx-danger: #f7768e;
+  --bdx-warning: #e0af68;
+  --bdx-bg: #1c1c23;
+  --bdx-fg: #c0caf5;
+  --bdx-muted: #565f89;
+
+  --bdx-panel: var(--bdx-secondary);
+  --bdx-link: var(--bdx-primary-dimmed);
+  --bdx-button-fg: var(--bdx-fg);
+  --bdx-border: #2a2b3d;
+  --bdx-card-radius: 12px;
+}

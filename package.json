@@ -15,7 +15,9 @@
   "main": "index.js",
   "scripts": {
     "package": "web-ext build --source-dir ./dist",
-    "run:browser": "web-ext run --devtools --source-dir ./dist",
+    "dev": "rolldown --config --watch",
+    "browser:firefox": "web-ext run --watch-files --start-url bsky.app --devtools --source-dir ./dist",
+    "lint": "npm run build && web-ext lint --source-dir ./dist",
     "build": "rolldown --config"
   },
   "devDependencies": {

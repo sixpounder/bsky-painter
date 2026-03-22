@@ -1,12 +1,14 @@
 {
   "manifest_version": 3,
+  "id": "io.github.sixpounder.bsky-painter",
   "name": "Bsky Painter",
   "version": "1.1",
   "description": "Apply custom themes (Gruvbox, Tokyo Night and others) to bsky.app",
   "permissions": ["storage", "activeTab", "scripting"],
   "host_permissions": ["*://bsky.app/*"],
+  "default_area": "navbar",
   "action": {
-    "default_title": "Bsky Theme",
+    "default_title": "Bsky Painter",
     "default_popup": "popup.html"
   },
   "background": {
@@ -28,5 +30,14 @@
       "resources": ["themes/*.css", "icons/*"],
       "matches": ["*://bsky.app/*"]
     }
-  ]
+  ],
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "bsky-painter@io.github.sixpounder",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  }
 }
