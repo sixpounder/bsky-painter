@@ -1,0 +1,14 @@
+{
+  "version": { "license": "GPL-3.0-only" },
+  "summary": {
+    "en-US": "Customize Bluesky with custom themes"
+  },
+  "categories": { "firefox": ["appearance", "social-communication"] },
+  "requires_payment": false,
+  "homepage": {
+    "en-US": "https://github.com/sixpounder/bsky-painter"
+  },
+  "support_email": {
+    "en-US": "sixpounder@protonmail.com"
+  }
+}

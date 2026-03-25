@@ -14,15 +14,16 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
-    "package": "web-ext build --source-dir ./dist",
     "dev": "rolldown --config --watch",
+    "build": "rolldown --config",
     "browser:firefox": "web-ext run --watch-files --start-url bsky.app --devtools --source-dir ./dist",
     "lint": "npm run build && web-ext lint --source-dir ./dist",
-    "build": "rolldown --config"
+    "publish": "npm run lint && node build/package-and-sign.js"
   },
   "devDependencies": {
     "@types/firefox-webext-browser": "^143.0.0",
     "@web/rollup-plugin-copy": "^0.5.1",
+    "inquirer": "^13.3.2",
     "rolldown": "^1.0.0-rc.10",
     "typescript": "^5.9.3",
     "web-ext": "^10.0.0"
