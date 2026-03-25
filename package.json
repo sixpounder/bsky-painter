@@ -18,7 +18,9 @@
     "build": "rolldown --config",
     "browser:firefox": "web-ext run --watch-files --start-url bsky.app --devtools --source-dir ./dist",
     "lint": "npm run build && web-ext lint --source-dir ./dist",
-    "publish": "npm run lint && node build/package-and-sign.js"
+    "package": "web-ext build --source-dir ./dist",
+    "preflight:git": "node build/preflight.git.js",
+    "publish": "npm run preflight:git && npm run lint && node build/package-and-sign.js"
   },
   "devDependencies": {
     "@types/firefox-webext-browser": "^143.0.0",
