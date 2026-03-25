@@ -1,0 +1,45 @@
+:root {
+    /* Latte palette (official) */
+    --cp-flamingo: #c0726b;
+    --cp-pink: #b4637a;
+    --cp-mauve: #9d66cc;
+    --cp-red: #c34143;
+    --cp-maroon: #b55671;
+    --cp-peach: #e18a7c;
+    --cp-yellow: #df8e1d;
+    --cp-green: #40a02b;
+    --cp-teal: #179299;
+    --cp-sky: #04a5e5;
+    --cp-sapphire: #209fb5;
+    --cp-blue: #2d6cdf;
+    --cp-lavender: #7287fd;
+    --cp-text: #4c4f69;
+    --cp-subtext1: #5c5f77;
+    --cp-subtext0: #6c6f85;
+    --cp-overlay2: #7c7f93;
+    --cp-overlay1: #8c8fa1;
+    --cp-overlay0: #9c9fae;
+    --cp-surface2: #e6e1cf;
+    --cp-surface1: #efebe1;
+    --cp-surface0: #fbf1c7;
+    --cp-base: #eef0f5;
+    --cp-mantle: #f2d5cf;
+    --cp-crust: #f4dbd6;
+
+    --bdx-primary: var(--cp-teal);
+    --bdx-primary-dimmed: var(--cp-sky);
+    --bdx-primary-alt: var(--cp-peach);
+    --bdx-secondary: var(--cp-surface1);
+    --bdx-danger: var(--cp-red);
+    --bdx-warning: var(--cp-yellow);
+    --bdx-bg: var(--cp-base);
+    --bdx-fg: var(--cp-text);
+    --bdx-muted: var(--cp-subtext0);
+
+    --bdx-panel: var(--bdx-secondary);
+    --bdx-link: var(--bdx-primary-dimmed);
+    --bdx-button-fg: var(--bdx-fg);
+    --bdx-border: var(--cp-mantle);
+    /* f2d5cf */
+    --bdx-card-radius: 12px;
+}

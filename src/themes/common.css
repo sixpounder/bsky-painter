@@ -53,13 +53,17 @@ article,
 
 /* inputs like the search box */
 input {
-  --placeholderTextColor: #ebdbb2 !important;
+  --placeholderTextColor: var(--bdx-muted) !important;
   background: var(--bdx-panel) !important;
   border-color: var(--bdx-border) !important;
   color: var(--bdx-fg) !important;
 
   &+div[style*="position: absolute"] {
     background: var(--bdx-panel) !important;
+  }
+
+  &::placeholder {
+    color: var(--bdx-muted) !important;
   }
 }
 

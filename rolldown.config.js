@@ -17,7 +17,7 @@ export default defineConfig({
   },
   plugins: [
     copy({
-      patterns: ['**/*.html', '**/*.json', '**/themes/*.css'],
+      patterns: ['**/*.html', '**/*.css', '**/*.json', '**/themes/*.css', '**/icons/*.png'],
       rootDir: './src'
     })
   ]

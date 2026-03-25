@@ -1,0 +1,17 @@
+:root {
+--bdx-primary: #7aa2a6;
+--bdx-primary-dimmed: #9fb3b1;
+--bdx-primary-alt: #b58e74;
+--bdx-secondary: #2b3333;
+--bdx-danger: #e46874;
+--bdx-warning: #d7a86e;
+--bdx-bg: #222b2a;
+--bdx-fg: #d3ccc6;
+--bdx-muted: #9aa39a;
+
+--bdx-panel: var(--bdx-secondary);
+--bdx-link: var(--bdx-primary-dimmed);
+--bdx-button-fg: var(--bdx-fg);
+--bdx-border: #2a322f;
+--bdx-card-radius: 12px;
+}

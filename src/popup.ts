@@ -1,17 +1,12 @@
-// popup.ts (Firefox-friendly: use browser.*)
 const form = document.getElementById("theme-form") as HTMLFormElement;
-const applyBtn = document.getElementById("apply") as HTMLButtonElement;
+const themeRadios = document.querySelectorAll('input[name="theme"]');
 
 function setSelected(theme: string) {
   const input = form.querySelector(`input[value="${theme}"]`) as HTMLInputElement | null;
   if (input) input.checked = true;
 }
 
-browser.storage.local.get("theme").then((res) => {
-  setSelected((res as any).theme || "gruvbox");
-});
-
-applyBtn.addEventListener("click", async () => {
+async function handleThemeChange() {
   const formData = new FormData(form);
   const theme = (formData.get("theme") as string) || "gruvbox";
   await browser.storage.local.set({ theme });
@@ -20,4 +15,13 @@ applyBtn.addEventListener("click", async () => {
   if (tab && tab.id) {
     await browser.tabs.sendMessage(tab.id as number, { type: "set-theme", theme });
   }
+}
+
+browser.storage.local.get("theme").then((res) => {
+  setSelected((res as any).theme || "gruvbox");
 });
+
+themeRadios.forEach(radio => {
+  radio.addEventListener("change", handleThemeChange);
+});
+

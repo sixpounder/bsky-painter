@@ -5,45 +5,81 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <title>Bsky Theme</title>
-    <style>
-        body {
-            font-family: system-ui, sans-serif;
-            margin: 10px;
-            width: 220px;
-        }
-
-        label {
-            display: flex;
-            align-items: center;
-            margin: 6px 0;
-            cursor: pointer;
-        }
-
-        input[type="radio"] {
-            margin-right: 8px;
-        }
-
-        .note {
-            font-size: 12px;
-            color: #666;
-            margin-top: 8px;
-        }
-
-        button {
-            margin-top: 8px;
-            padding: 6px 8px;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="popup.css">
 </head>
 
 <body>
     <form id="theme-form">
-        <label><input type="radio" name="theme" value="default" /> Default (site)</label>
-        <label><input type="radio" name="theme" value="tokyonight" /> Tokyo Night</label>
-        <label><input type="radio" name="theme" value="gruvbox" /> Gruvbox</label>
+        <label>
+            <input type="radio" name="theme" value="catppuccin-latte" />
+            <div class="option">
+                <div class="palette p-cp-latte" aria-hidden="true"><span></span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+                    <div class="label-title">Catppuccin Latte</div>
+                </div>
+            </div>
+        </label>
+
+        <label>
+            <input type="radio" name="theme" value="catppuccin-frappe" />
+            <div class="option">
+                <div class="palette p-cp-frappe" aria-hidden="true"><span></span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+                    <div class="label-title">Catppuccin Frappe</div>
+                </div>
+            </div>
+        </label>
+
+        <label>
+            <input type="radio" name="theme" value="catppuccin-macchiato" />
+            <div class="option">
+                <div class="palette p-cp-macchiato" aria-hidden="true"><span></span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+                    <div class="label-title">Catppuccin Macchiato</div>
+                </div>
+            </div>
+        </label>
+
+        <label>
+            <input type="radio" name="theme" value="catppuccin-mocha" />
+            <div class="option">
+                <div class="palette p-cp-mocha" aria-hidden="true"><span></span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+                    <div class="label-title">Catppuccin Mocha</div>
+                </div>
+            </div>
+        </label>
+
+        <label>
+            <input type="radio" name="theme" value="tokyonight" />
+            <div class="option">
+                <div class="palette p-tokyonight" aria-hidden="true"><span></span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+                    <div class="label-title">Tokyo Night</div>
+                </div>
+            </div>
+        </label>
+
+        <label>
+            <input type="radio" name="theme" value="gruvbox" />
+            <div class="option">
+                <div class="palette p-gruvbox" aria-hidden="true"><span></span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+                    <div class="label-title">Gruvbox</div>
+                </div>
+            </div>
+        </label>
+
+        <label>
+            <input type="radio" name="theme" value="everforest" />
+            <div class="option">
+                <div class="palette p-everforest" aria-hidden="true"><span></span></div>
+                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
+                    <div class="label-title">Everforest</div>
+                </div>
+            </div>
+        </label>
     </form>
-    <button id="apply">Apply to current tab</button>
-    <div class="note">Theme persists across pages on bsky.app</div>
     <script src="popup.js"></script>
 </body>
 
