@@ -1,86 +1,166 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
+        <title>Bsky Theme</title>
+        <link rel="stylesheet" type="text/css" href="popup.css" />
+    </head>
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Bsky Theme</title>
-    <link rel="stylesheet" type="text/css" href="popup.css">
-</head>
-
-<body>
-    <form id="theme-form">
-        <label>
-            <input type="radio" name="theme" value="catppuccin-latte" />
-            <div class="option">
-                <div class="palette p-cp-latte" aria-hidden="true"><span></span></div>
-                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-                    <div class="label-title">Catppuccin Latte</div>
+    <body>
+        <form id="theme-form">
+            <label>
+                <input type="radio" name="theme" value="default" />
+                <div class="option">
+                    <div class="palette p-default" aria-hidden="true">
+                        <span></span>
+                    </div>
+                    <div
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                        "
+                    >
+                        <div class="label-title">Default (no theme)</div>
+                    </div>
                 </div>
-            </div>
-        </label>
+            </label>
 
-        <label>
-            <input type="radio" name="theme" value="catppuccin-frappe" />
-            <div class="option">
-                <div class="palette p-cp-frappe" aria-hidden="true"><span></span></div>
-                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-                    <div class="label-title">Catppuccin Frappe</div>
+            <label>
+                <input type="radio" name="theme" value="catppuccin-latte" />
+                <div class="option">
+                    <div class="palette p-cp-latte" aria-hidden="true">
+                        <span></span>
+                    </div>
+                    <div
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                        "
+                    >
+                        <div class="label-title">Catppuccin Latte</div>
+                    </div>
                 </div>
-            </div>
-        </label>
+            </label>
 
-        <label>
-            <input type="radio" name="theme" value="catppuccin-macchiato" />
-            <div class="option">
-                <div class="palette p-cp-macchiato" aria-hidden="true"><span></span></div>
-                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-                    <div class="label-title">Catppuccin Macchiato</div>
+            <label>
+                <input type="radio" name="theme" value="catppuccin-frappe" />
+                <div class="option">
+                    <div class="palette p-cp-frappe" aria-hidden="true">
+                        <span></span>
+                    </div>
+                    <div
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                        "
+                    >
+                        <div class="label-title">Catppuccin Frappe</div>
+                    </div>
                 </div>
-            </div>
-        </label>
+            </label>
 
-        <label>
-            <input type="radio" name="theme" value="catppuccin-mocha" />
-            <div class="option">
-                <div class="palette p-cp-mocha" aria-hidden="true"><span></span></div>
-                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-                    <div class="label-title">Catppuccin Mocha</div>
+            <label>
+                <input type="radio" name="theme" value="catppuccin-macchiato" />
+                <div class="option">
+                    <div class="palette p-cp-macchiato" aria-hidden="true">
+                        <span></span>
+                    </div>
+                    <div
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                        "
+                    >
+                        <div class="label-title">Catppuccin Macchiato</div>
+                    </div>
                 </div>
-            </div>
-        </label>
+            </label>
 
-        <label>
-            <input type="radio" name="theme" value="tokyonight" />
-            <div class="option">
-                <div class="palette p-tokyonight" aria-hidden="true"><span></span></div>
-                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-                    <div class="label-title">Tokyo Night</div>
+            <label>
+                <input type="radio" name="theme" value="catppuccin-mocha" />
+                <div class="option">
+                    <div class="palette p-cp-mocha" aria-hidden="true">
+                        <span></span>
+                    </div>
+                    <div
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                        "
+                    >
+                        <div class="label-title">Catppuccin Mocha</div>
+                    </div>
                 </div>
-            </div>
-        </label>
+            </label>
 
-        <label>
-            <input type="radio" name="theme" value="gruvbox" />
-            <div class="option">
-                <div class="palette p-gruvbox" aria-hidden="true"><span></span></div>
-                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-                    <div class="label-title">Gruvbox</div>
+            <label>
+                <input type="radio" name="theme" value="tokyonight" />
+                <div class="option">
+                    <div class="palette p-tokyonight" aria-hidden="true">
+                        <span></span>
+                    </div>
+                    <div
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                        "
+                    >
+                        <div class="label-title">Tokyo Night</div>
+                    </div>
                 </div>
-            </div>
-        </label>
+            </label>
 
-        <label>
-            <input type="radio" name="theme" value="everforest" />
-            <div class="option">
-                <div class="palette p-everforest" aria-hidden="true"><span></span></div>
-                <div style="display:flex;align-items:center;justify-content:space-between;width:100%;">
-                    <div class="label-title">Everforest</div>
+            <label>
+                <input type="radio" name="theme" value="gruvbox" />
+                <div class="option">
+                    <div class="palette p-gruvbox" aria-hidden="true">
+                        <span></span>
+                    </div>
+                    <div
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                        "
+                    >
+                        <div class="label-title">Gruvbox</div>
+                    </div>
                 </div>
-            </div>
-        </label>
-    </form>
-    <script src="popup.js"></script>
-</body>
+            </label>
 
+            <label>
+                <input type="radio" name="theme" value="everforest" />
+                <div class="option">
+                    <div class="palette p-everforest" aria-hidden="true">
+                        <span></span>
+                    </div>
+                    <div
+                        style="
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            width: 100%;
+                        "
+                    >
+                        <div class="label-title">Everforest</div>
+                    </div>
+                </div>
+            </label>
+        </form>
+        <script src="popup.js"></script>
+    </body>
 </html>

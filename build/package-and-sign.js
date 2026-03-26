@@ -8,6 +8,7 @@ import webxt from "web-ext";
 // Environment variable names
 const KEY_ENV = 'MOZ_DEV_API_KEY';
 const SECRET_ENV = 'MOZ_DEV_SECRET';
+const API_ENDPOINT = "https://addons.mozilla.org/api/v5/";
 
 // Retrieve from env if available
 let apiKey = process.env[KEY_ENV];
@@ -45,8 +46,8 @@ async function promptForCredentials() {
 async function runCommand(key, secret) {
     // Replace this with real logic (e.g., HTTP request, SDK call, etc.)
     console.info('\n📦️ Packaging extension');
-    console.log(`Using API key: ${key}`);
-    console.log(`Using API secret: ${'*'.repeat(secret.length)}`);
+    console.info(`Using API key: ${key}`);
+    console.info(`Using API secret: ${'*'.repeat(secret.length)}`);
     const options = {
         apiKey,
         apiSecret,
@@ -54,7 +55,7 @@ async function runCommand(key, secret) {
         artifactsDir: "dist",
         target: "firefox",
         channel: "listed",
-        amoBaseUrl: "https://addons.mozilla.org/api/v5/",
+        amoBaseUrl: API_ENDPOINT,
         amoMetadata: "dist/metadata.json"
     };
     await webxt.cmd.build(options);
