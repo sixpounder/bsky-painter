@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Bsky Painter",
-  "version": "1.2",
+  "version": "1.3",
   "description": "Apply custom themes (Gruvbox, Tokyo Night and others) to bsky.app",
   "permissions": ["storage", "activeTab", "scripting"],
   "host_permissions": ["*://bsky.app/*"],
