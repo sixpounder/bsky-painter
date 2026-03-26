@@ -245,3 +245,18 @@ input[type="radio"]:focus-visible + .option {
         #b58e74 66%
     );
 }
+
+/** Show content conditionally */
+#no-bsky-notice {
+    display: none;
+}
+
+.blocked {
+    & form {
+        display: none;
+    }
+
+    & #no-bsky-notice {
+        display: block;
+    }
+}

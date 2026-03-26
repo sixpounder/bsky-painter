@@ -29,6 +29,22 @@ async function handleThemeChange() {
   }
 }
 
+function showUI() {
+  document.body.classList.remove("blocked");
+}
+
+function showBlocked() {
+  document.body.classList.add("blocked");
+}
+
+// Connect to the background script
+const port = browser.runtime.connect({ name: "popup" });
+
+port.onMessage.addListener((msg: any) => {
+  // `msg` contains {allowed: boolean, url: string}
+  msg.allowed && msg.url ? showUI() : showBlocked();
+});
+
 browser.storage.local.get("theme").then((res) => {
   setSelected((res as any).theme || "default");
 });
