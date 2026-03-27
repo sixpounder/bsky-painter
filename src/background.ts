@@ -47,7 +47,7 @@ async function updateCurrentTabStatus() {
  */
 browser.runtime.onInstalled.addListener(() => {
   browser.storage.local.get("theme").then((res) => {
-    const data = res as Record<string, any>;
+    const data = res as Record<string, string>;
     return browser.storage.local.set({ theme: data.theme ?? "default" });
   });
 });
@@ -72,7 +72,7 @@ browser.tabs.onActivated.addListener(() => {
 });
 
 // React to URL changes in the active tab (navigation, SPA updates)
-browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
+browser.tabs.onUpdated.addListener((tabId, changeInfo) => {
   // Only care about the currently active tab in the focused window
   browser.tabs
     .query({ active: true, currentWindow: true })

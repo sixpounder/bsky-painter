@@ -71,7 +71,7 @@ function cleanupCommon() {
 async function init(): Promise<void> {
   await injectCommon();
   const res = await browser.storage.local.get("theme");
-  const data = res as Record<string, any>;
+  const data = res as Record<string, string>;
   const theme = data.theme || "gruvbox";
   await applyThemeVars(theme);
 }
@@ -82,7 +82,7 @@ init();
 /**
  * Listens for messages from the popup and applies the theme accordingly.
  */
-browser.runtime.onMessage.addListener((msg: any) => {
+browser.runtime.onMessage.addListener((msg: Record<string, string>) => {
   if (msg && msg.type === "set-theme") {
     applyThemeVars(msg.theme);
     browser.storage.local.set({ theme: msg.theme });

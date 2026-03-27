@@ -56,6 +56,9 @@ function showBlocked() {
   document.body.classList.add("blocked");
 }
 
+/**
+ * Localizes the page by setting the text content of elements with a `data-i18n` attribute.
+ */
 function localizePage() {
   document.querySelectorAll("[data-i18n]").forEach((el) => {
     const key = (el as HTMLElement).getAttribute("data-i18n");
@@ -69,14 +72,19 @@ function localizePage() {
 const port = browser.runtime.connect({ name: "popup" });
 
 // Listen for messages from the background script
-port.onMessage.addListener((msg: any) => {
+port.onMessage.addListener((msg) => {
   // `msg` contains {allowed: boolean, url: string}
-  msg.allowed && msg.url ? showUI() : showBlocked();
+  const message = msg as { allowed: boolean; url: string };
+  if (message.allowed && message.url) {
+    showUI();
+  } else {
+    showBlocked();
+  }
 });
 
 // Initialize theme selection on load
 browser.storage.local.get("theme").then((res) => {
-  setSelected((res as any).theme || "default");
+  setSelected(res.theme || "default");
 });
 
 // Add event listeners to theme radios
