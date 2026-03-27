@@ -11,7 +11,9 @@
     "default_popup": "popup.html"
   },
   "background": {
-    "scripts": ["background.js"]
+    "scripts": ["background.js"],
+    "service_worker": "background.js",
+    "type": "module"
   },
   "icons": {
     "48": "icons/icon-48.png",
@@ -20,7 +22,7 @@
   "content_scripts": [
     {
       "matches": ["*://bsky.app/*"],
-      "js": ["content-script.js"],
+      "js": ["browser-polyfill.min.js", "content-script.js"],
       "run_at": "document_start"
     }
   ],

@@ -1,3 +1,5 @@
+import browser from "webextension-polyfill";
+
 const form = document.getElementById("theme-form") as HTMLFormElement;
 const themeRadios = document.querySelectorAll('input[name="theme"]');
 
@@ -84,7 +86,11 @@ port.onMessage.addListener((msg) => {
 
 // Initialize theme selection on load
 browser.storage.local.get("theme").then((res) => {
-  setSelected(res.theme || "default");
+  if ("theme" in res && typeof res.theme === "string") {
+    setSelected(res.theme);
+  } else {
+    setSelected("default");
+  }
 });
 
 // Add event listeners to theme radios

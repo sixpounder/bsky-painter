@@ -1,10 +1,11 @@
-// background.ts
+import browser from "webextension-polyfill";
+
 // background script for the extension. This script runs in the background and handles tab status checks.
 // It listens for tab updates and sends the current status to the popup.
 
 // Keep a reference to the popup port (if it’s open)
 type TabStatus = { allowed: boolean; url: string | undefined };
-let popupPort: browser.runtime.Port | undefined = undefined;
+let popupPort: browser.Runtime.Port | undefined = undefined;
 let lastStatus: TabStatus = { allowed: false, url: undefined }; // cached result
 
 /**

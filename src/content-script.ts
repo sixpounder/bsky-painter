@@ -1,4 +1,3 @@
-// content-script.ts (Firefox-friendly: use browser.*)
 const THEME_STYLE_ID = "bdx-theme-style";
 const THEME_VARS_ID = "bdx-theme-vars";
 const INJECTED_CLASS = "bdx-theme-injected";
@@ -82,8 +81,15 @@ init();
 /**
  * Listens for messages from the popup and applies the theme accordingly.
  */
-browser.runtime.onMessage.addListener((msg: Record<string, string>) => {
-  if (msg && msg.type === "set-theme") {
+browser.runtime.onMessage.addListener((msg: unknown) => {
+  if (
+    msg &&
+    typeof msg === "object" &&
+    "type" in msg &&
+    msg.type === "set-theme" &&
+    "theme" in msg &&
+    typeof msg.theme === "string"
+  ) {
     applyThemeVars(msg.theme);
     browser.storage.local.set({ theme: msg.theme });
   }
