@@ -1,14 +1,11 @@
+// background.ts
+// background script for the extension. This script runs in the background and handles tab status checks.
+// It listens for tab updates and sends the current status to the popup.
+
 // Keep a reference to the popup port (if it’s open)
 type TabStatus = { allowed: boolean; url: string | undefined };
 let popupPort: browser.runtime.Port | undefined = undefined;
 let lastStatus: TabStatus = { allowed: false, url: undefined }; // cached result
-
-browser.runtime.onInstalled.addListener(() => {
-  browser.storage.local.get("theme").then((res) => {
-    const data = res as Record<string, any>;
-    return browser.storage.local.set({ theme: data.theme ?? "default" });
-  });
-});
 
 /**
  * Checks if a URL is allowed by the extension's host permissions.
@@ -45,6 +42,16 @@ async function updateCurrentTabStatus() {
   sendStatusIfConnected(); // push immediately if popup is open
 }
 
+/**
+ * Sets the default theme on first install.
+ */
+browser.runtime.onInstalled.addListener(() => {
+  browser.storage.local.get("theme").then((res) => {
+    const data = res as Record<string, any>;
+    return browser.storage.local.set({ theme: data.theme ?? "default" });
+  });
+});
+
 // Listen for the popup opening
 browser.runtime.onConnect.addListener((port) => {
   if (port.name !== "popup") return;
@@ -76,5 +83,5 @@ browser.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
     });
 });
 
-// Initialise cache when the background script starts
+// Initialize cache when the background script starts
 updateCurrentTabStatus();
