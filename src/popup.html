@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <div id="no-bsky-notice">This extension only works on Bluesky</div>
+        <div id="no-bsky-notice"></div>
         <form id="theme-form">
             <label>
                 <input type="radio" name="theme" value="default" />
@@ -24,7 +24,10 @@
                             width: 100%;
                         "
                     >
-                        <div class="label-title">Default (no theme)</div>
+                        <div
+                            class="label-title"
+                            data-i18n="defaultThemeLabel"
+                        ></div>
                     </div>
                 </div>
             </label>

@@ -1,0 +1,16 @@
+{
+  "defaultThemeLabel": {
+    "message": "Standard (kein Thema)",
+    "description": "Signalisiert, dass kein Thema derzeit angewendet wird"
+  },
+
+  "extensionDescription": {
+    "message": "Persönliche Themen anwenden (z.B. Gruvbox oder Tokyo Night)",
+    "description": "Beschreibung der Erweiterung."
+  },
+
+  "blockedContent": {
+    "message": "Diese Erweiterung funktioniert auf diesem Tab nicht",
+    "description": "Wird angezeigt, wenn die Erweiterung nicht für den aktuellen Tab unterstützt wird"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "defaultThemeLabel": {
+    "message": "Predeterminado (sin tema)",
+    "description": "Indica que no hay ningún tema aplicado actualmente"
+  },
+
+  "extensionDescription": {
+    "message": "Aplicar temas personalizados (como Gruvbox o Tokyo Night)",
+    "description": "Descripción de la extensión."
+  },
+
+  "blockedContent": {
+    "message": "Esta extensión no funciona en esta pestaña",
+    "description": "Se muestra cuando la extensión no es compatible con la pestaña actual"
+  }
+}

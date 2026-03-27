@@ -1,0 +1,16 @@
+{
+  "defaultThemeLabel": {
+    "message": "Thème par défaut (aucun)",
+    "description": "Signale que no theme est actuellement appliqué"
+  },
+
+  "extensionDescription": {
+    "message": "Appliquer des thèmes personnalisés (Gruvbox, Tokyo Night et autres) à Bluesky",
+    "description": "Description de l'extension."
+  },
+
+  "blockedContent": {
+    "message": "Cette extension ne fonctionne pas sur cette onglet",
+    "description": "Montrée lorsque l'extension n'est pas active sur un onglet non supporté"
+  }
+}

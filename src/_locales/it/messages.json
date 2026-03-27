@@ -1,0 +1,16 @@
+{
+  "defaultThemeLabel": {
+    "message": "Nessun tema",
+    "description": "Segnala che non è applicato alcun tema"
+  },
+
+  "extensionDescription": {
+    "message": "Applica temi personalizzati (Gruvbox, Tokyo Night e altri) a Bluesky",
+    "description": "Descrizione dell'estensione."
+  },
+
+  "blockedContent": {
+    "message": "Questa estensione non funziona su questa scheda",
+    "description": "Mostra quando l'estensione non è attiva su una scheda non supportata"
+  }
+}

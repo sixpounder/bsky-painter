@@ -258,5 +258,8 @@ input[type="radio"]:focus-visible + .option {
 
     & #no-bsky-notice {
         display: block;
+        &:after {
+            content: "__MSG_blockedContent__";
+        }
     }
 }

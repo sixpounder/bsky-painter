@@ -56,6 +56,15 @@ function showBlocked() {
   document.body.classList.add("blocked");
 }
 
+function localizePage() {
+  document.querySelectorAll("[data-i18n]").forEach((el) => {
+    const key = (el as HTMLElement).getAttribute("data-i18n");
+    if (key) {
+      (el as HTMLElement).textContent = browser.i18n.getMessage(key);
+    }
+  });
+}
+
 // Connect to the background script
 const port = browser.runtime.connect({ name: "popup" });
 
@@ -74,3 +83,5 @@ browser.storage.local.get("theme").then((res) => {
 themeRadios.forEach((radio) => {
   radio.addEventListener("change", handleThemeChange);
 });
+
+localizePage();
