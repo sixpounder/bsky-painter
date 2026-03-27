@@ -1,0 +1,16 @@
+{
+  "defaultThemeLabel": {
+    "message": "Domyślny (brak motywu)",
+    "description": "Sygnalizuje, że żaden motyw nie jest obecnie zastosowany"
+  },
+
+  "extensionDescription": {
+    "message": "Zastosuj własne motywy (np. Gruvbox, Tokyo Night i inne) w Bluesky",
+    "description": "Opis rozszerzenia."
+  },
+
+  "blockedContent": {
+    "message": "To rozszerzenie nie działa w tej karcie",
+    "description": "Wyświetlane, gdy rozszerzenie nie jest aktywne na nieobsługiwanej karcie"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "defaultThemeLabel": {
+    "message": "Oletus (ei teemaa)",
+    "description": "Ilmoittaa, että mitään teemaa ei ole tällä hetkellä käytössä"
+  },
+
+  "extensionDescription": {
+    "message": "Käytä mukautettuja teemoja (esim. Gruvbox, Tokyo Night ja muita) Bluesky‑sovelluksessa",
+    "description": "Laajennuksen kuvaus."
+  },
+
+  "blockedContent": {
+    "message": "Tämä laajennus ei toimi tässä välilehdessä",
+    "description": "Näytetään, kun laajennus ei ole aktiivinen tukemattomassa välilehdessä"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "defaultThemeLabel": {
+    "message": "За замовчуванням (без теми)",
+    "description": "Позначає, що наразі не застосовано жодної теми"
+  },
+
+  "extensionDescription": {
+    "message": "Застосовувати власні теми (наприклад, Gruvbox, Tokyo Night та інші) у Bluesky",
+    "description": "Опис розширення."
+  },
+
+  "blockedContent": {
+    "message": "Це розширення не працює у цій вкладці",
+    "description": "Показується, коли розширення не активне на непідтримуваній вкладці"
+  }
+}

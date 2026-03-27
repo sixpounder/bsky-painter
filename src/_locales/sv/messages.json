@@ -1,0 +1,16 @@
+{
+  "defaultThemeLabel": {
+    "message": "Standard (ingen tema)",
+    "description": "Visar att ingen tema för närvarande är aktiv"
+  },
+
+  "extensionDescription": {
+    "message": "Applicera anpassade teman (t.ex. Gruvbox, Tokyo Night och andra) i Bluesky",
+    "description": "Beskrivning av tillägget."
+  },
+
+  "blockedContent": {
+    "message": "Det här tillägget fungerar inte på den här fliken",
+    "description": "Visas när tillägget inte är aktivt på en flik som inte stöds"
+  }
+}

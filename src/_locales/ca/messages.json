@@ -1,0 +1,16 @@
+{
+  "defaultThemeLabel": {
+    "message": "Per defecte (sense tema)",
+    "description": "Indica que no hi ha cap tema aplicat actualment"
+  },
+
+  "extensionDescription": {
+    "message": "Aplica temes personalitzades (p. ex. Gruvbox, Tokyo Night i altres) a Bluesky",
+    "description": "Descripció de l'extensió."
+  },
+
+  "blockedContent": {
+    "message": "Aquesta extensió no funciona en aquesta pestanya",
+    "description": "Es mostra quan l'extensió no està activa en una pestanya no compatible"
+  }
+}

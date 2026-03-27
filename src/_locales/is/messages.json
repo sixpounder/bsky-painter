@@ -1,0 +1,16 @@
+{
+  "defaultThemeLabel": {
+    "message": "Sjálfgefið (engin þema)",
+    "description": "Gefur til kynna að engin þema sé í gangi"
+  },
+
+  "extensionDescription": {
+    "message": "Beita sérsniðnum þemum (t.d. Gruvbox, Tokyo Night og fleiri) í Bluesky",
+    "description": "Lýsing á viðbótinni."
+  },
+
+  "blockedContent": {
+    "message": "Þessi viðbót virkar ekki á þessum flipa",
+    "description": "Sýnt þegar viðbótin er ekki virk á óstuddum flipa"
+  }
+}

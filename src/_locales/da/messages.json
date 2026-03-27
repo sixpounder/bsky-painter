@@ -1,0 +1,16 @@
+{
+  "defaultThemeLabel": {
+    "message": "Standard (ingen tema)",
+    "description": "Angiver, at der i øjeblikket ikke er noget tema anvendt"
+  },
+
+  "extensionDescription": {
+    "message": "Anvend brugerdefinerede temaer (Gruvbox, Tokyo Night og andre) på Bluesky",
+    "description": "Beskrivelse af udvidelsen."
+  },
+
+  "blockedContent": {
+    "message": "Denne udvidelse fungerer ikke på denne fane",
+    "description": "Vises, når udvidelsen ikke er understøttet på den aktuelle fane"
+  }
+}
