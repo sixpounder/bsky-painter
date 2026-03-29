@@ -40,6 +40,15 @@ div[role="tab"]:hover {
     }
 }
 
+/* Right panel links */
+div[role="link"][style*="background-color"] {
+    background-color: var(--bdx-primary-dimmed) !important;
+    color: var(--bdx-primary-contrast) !important;
+    & div {
+        color: var(--bdx-primary-contrast) !important;
+    }
+}
+
 /* Cards / posts */
 article,
 [data-testid="post"],
