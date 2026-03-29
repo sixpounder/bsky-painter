@@ -95,11 +95,29 @@ button[aria-label="Create an account"] {
     }
 }
 
-button:not([id="radix-«rn»"]) {
+button {
     background-color: var(--bdx-secondary) !important;
 
     & > div {
         color: var(--bdx-button-fg) !important;
+    }
+}
+
+nav button[aria-label="Switch accounts"] {
+    background-color: transparent !important;
+    &:hover {
+        background-color: var(--bdx-secondary) !important;
+    }
+}
+
+nav button[aria-label="Compose new post"] {
+    background-color: var(--bdx-primary) !important;
+    & > div {
+        color: var(--bdx-primary-contrast) !important;
+    }
+    & svg path {
+        color: var(--bdx-primary-contrast) !important;
+        fill: var(--bdx-primary-contrast) !important;
     }
 }
 
