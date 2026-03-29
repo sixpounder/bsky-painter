@@ -33,6 +33,13 @@ div:not([data-testid*="-selector"])[data-testid^="homeScreenFeedTabs-"]
     background-color: var(--bdx-primary) !important;
 }
 
+div[role="tab"]:hover {
+    background-color: var(--bdx-primary-dimmed) !important;
+    & div {
+        color: var(--bdx-primary-contrast) !important;
+    }
+}
+
 /* Cards / posts */
 article,
 [data-testid="post"],

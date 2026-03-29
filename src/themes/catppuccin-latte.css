@@ -27,7 +27,7 @@
     --cp-crust: #f4dbd6;
 
     --bdx-primary: var(--cp-teal);
-    --bdx-primary-dimmed: var(--cp-sky);
+    --bdx-primary-dimmed: #7c999b;
     --bdx-primary-alt: var(--cp-peach);
     --bdx-primary-contrast: var(--cp-base);
     --bdx-secondary: var(--cp-surface1);
