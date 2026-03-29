@@ -95,7 +95,7 @@ button[aria-label="Create an account"] {
     }
 }
 
-button {
+button:not([id="radix-«rn»"]) {
     background-color: var(--bdx-secondary) !important;
 
     & > div {
