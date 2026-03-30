@@ -12,11 +12,13 @@
 import { promisify } from "node:util";
 import { exec as execCallback } from "node:child_process";
 import { resolve } from "node:path";
-import { globSync } from "glob";
+import { glob } from "glob";
+import chalk from "chalk";
+import { performance } from "node:perf_hooks";
 
 const exec = promisify(execCallback);
 
-export default function postcssThemesPlugin(options = {}) {
+export default async function postcssThemesPlugin(options = {}) {
   const {
     srcDir = "src/themes",
     outDir = "dist/themes",
@@ -24,7 +26,7 @@ export default function postcssThemesPlugin(options = {}) {
   } = options;
 
   // Resolve the CSS files that belong to the theme directory.
-  const cssFiles = globSync(`${srcDir}/*.css`);
+  const cssFiles = await glob(`${srcDir}/*.css`);
 
   return {
     name: "rolldown-plugin-postcss-cli",
@@ -41,12 +43,24 @@ export default function postcssThemesPlugin(options = {}) {
         "--minify", // minify the output (honours `minimize` in config)
       ].join(" ");
 
-      console.info(`\n🔧 [PostCSS] Running on ${cssFiles.length} file(s)`);
+      console.info(
+        `\n${chalk.blue("◌")} [PostCSS] Running on ${cssFiles.length} file(s)`,
+      );
 
       try {
+        performance.mark("BEFORE_EXEC");
         // `exec` will throw if the command exits with a non‑zero code.
         await exec(cmd, { stdio: "inherit", cwd: process.cwd() });
-        console.info("✅ [PostCSS] finished – output in", outDir);
+        performance.mark("AFTER_EXEC");
+        const measure = performance.measure(
+          "EXEC_TIME",
+          "BEFORE_EXEC",
+          "AFTER_EXEC",
+        );
+        console.info(
+          `${chalk.green("✔")} [PostCSS] finished in ${chalk.green(`${measure.duration.toFixed(2)} ms`)} – output in`,
+          outDir,
+        );
       } catch (err) {
         console.error("\n❌  [PostCSS] failed:", err);
         // Propagate the error so Rolldown aborts the build.
