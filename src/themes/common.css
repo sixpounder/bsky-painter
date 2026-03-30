@@ -1,3 +1,5 @@
+@import "_mixins.css";
+
 /* Base page */
 html,
 body,
@@ -101,22 +103,15 @@ select {
     border-color: var(--bdx-border) !important;
 }
 
+/* Buttons */
+button {
+    @mixin button secondary, var(--bdx-button-fg);
+}
+
 button[aria-label="Create account"],
 button[aria-label="Create new account"],
 button[aria-label="Create an account"] {
-    background-color: var(--bdx-primary) !important;
-
-    & > div {
-        color: var(--bdx-secondary) !important;
-    }
-}
-
-button {
-    background-color: var(--bdx-secondary) !important;
-
-    & > div {
-        color: var(--bdx-button-fg) !important;
-    }
+    @mixin button primary;
 }
 
 nav button[aria-label="Switch accounts"] {
@@ -127,14 +122,7 @@ nav button[aria-label="Switch accounts"] {
 }
 
 nav button[aria-label="Compose new post"] {
-    background-color: var(--bdx-primary) !important;
-    & > div {
-        color: var(--bdx-primary-contrast) !important;
-    }
-    & svg path {
-        color: var(--bdx-primary-contrast) !important;
-        fill: var(--bdx-primary-contrast) !important;
-    }
+    @mixin button primary;
 }
 
 div[data-testid^="feedItem-"] button {
@@ -182,41 +170,15 @@ img,
 
 div[role="dialog"] {
     & button[aria-label="Discard"] {
-        background-color: var(--bdx-danger) !important;
-        & > div {
-            color: var(--bdx-button-fg-alt) !important;
-        }
-        & svg path {
-            color: var(--bdx-button-fg-alt) !important;
-            fill: var(--bdx-button-fg-alt) !important;
-        }
+        @mixin button danger;
     }
 
     & button[aria-label="Save draft"] {
-        background-color: var(--bdx-primary) !important;
-        & > div {
-            color: var(--bdx-button-fg-alt) !important;
-        }
-        & svg path {
-            color: var(--bdx-button-fg-alt) !important;
-            fill: var(--bdx-button-fg-alt) !important;
-        }
+        @mixin button primary;
     }
 
     & button[aria-label="Publish post"] {
-        &[disabled] {
-            background-color: var(--bdx-muted) !important;
-        }
-
-        background-color: var(--bdx-primary) !important;
-
-        & > div {
-            color: var(--bdx-button-fg-alt) !important;
-        }
-        & svg path {
-            color: var(--bdx-button-fg-alt) !important;
-            fill: var(--bdx-button-fg-alt) !important;
-        }
+        @mixin button primary;
     }
 }
 

@@ -1,5 +1,6 @@
 import { defineConfig } from "rolldown";
 import { copy } from "@web/rollup-plugin-copy";
+import postcssCli from "./build/postcss.cli.js";
 
 export default defineConfig([
   {
@@ -17,7 +18,6 @@ export default defineConfig([
       popup: "src/popup.ts",
     },
 
-    // output dir and format
     output: {
       dir: "dist",
       format: "esm",
@@ -28,15 +28,10 @@ export default defineConfig([
 
     plugins: [
       copy({
-        patterns: [
-          "**/*.html",
-          "**/*.css",
-          "**/*.json",
-          "**/themes/*.css",
-          "**/icons/*.png",
-        ],
+        patterns: ["**/*.html", "*.css", "**/*.json", "**/icons/*.png"],
         rootDir: "./src",
       }),
+      postcssCli(),
     ],
   },
 ]);

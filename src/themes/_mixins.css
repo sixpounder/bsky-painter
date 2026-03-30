@@ -1,0 +1,15 @@
+@define-mixin button $type, $contrast: var(--bdx-button-fg-alt) {
+    &[disabled] {
+        background-color: var(--bdx-muted) !important;
+    }
+
+    background-color: var(--bdx-$(type)) !important;
+
+    & > div {
+        color: $(contrast) !important;
+    }
+    & svg path {
+        color: $(contrast) !important;
+        fill: $(contrast) !important;
+    }
+}
