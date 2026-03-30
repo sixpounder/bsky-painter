@@ -13,6 +13,7 @@
     --bdx-panel: var(--bdx-secondary);
     --bdx-link: var(--bdx-primary-dimmed);
     --bdx-button-fg: var(--bdx-fg);
+    --bdx-button-fg-alt: var(--bdx-bg);
     --bdx-border: var(--bdx-secondary);
     --bdx-card-radius: 12px;
 }

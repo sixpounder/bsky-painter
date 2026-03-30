@@ -151,10 +151,12 @@ svg path {
 /* Muted text */
 small,
 .muted,
-[data-muted="true"],
-span,
-p {
+[data-muted="true"] {
     color: var(--bdx-muted) !important;
+}
+
+p {
+    color: var(--bdx-text);
 }
 
 /* Accents */
@@ -174,6 +176,48 @@ img,
 .avatar,
 .profile-image {
     outline-color: var(--bdx-border) !important;
+}
+
+/** Save draft dialog */
+
+div[role="dialog"] {
+    & button[aria-label="Discard"] {
+        background-color: var(--bdx-danger) !important;
+        & > div {
+            color: var(--bdx-button-fg-alt) !important;
+        }
+        & svg path {
+            color: var(--bdx-button-fg-alt) !important;
+            fill: var(--bdx-button-fg-alt) !important;
+        }
+    }
+
+    & button[aria-label="Save draft"] {
+        background-color: var(--bdx-primary) !important;
+        & > div {
+            color: var(--bdx-button-fg-alt) !important;
+        }
+        & svg path {
+            color: var(--bdx-button-fg-alt) !important;
+            fill: var(--bdx-button-fg-alt) !important;
+        }
+    }
+
+    & button[aria-label="Publish post"] {
+        &[disabled] {
+            background-color: var(--bdx-muted) !important;
+        }
+
+        background-color: var(--bdx-primary) !important;
+
+        & > div {
+            color: var(--bdx-button-fg-alt) !important;
+        }
+        & svg path {
+            color: var(--bdx-button-fg-alt) !important;
+            fill: var(--bdx-button-fg-alt) !important;
+        }
+    }
 }
 
 /* Scrollbars (Firefox) */

@@ -22,7 +22,7 @@
     "lint": "eslint . && npm run build && web-ext lint --source-dir ./dist",
     "package": "web-ext build --source-dir ./dist",
     "preflight:git": "node build/preflight.git.js",
-    "publish": "npm run preflight:git && npm run lint && node build/package-and-sign.js",
+    "publish": "npm run preflight:git && npm run lint && node build/package-and-sign.js && node build/bump-version.js",
     "prepare": "husky",
     "commitlint": "commitlint --edit \"$1\""
   },

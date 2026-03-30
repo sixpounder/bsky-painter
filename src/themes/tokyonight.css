@@ -10,9 +10,11 @@
     --bdx-fg: #c0caf5;
     --bdx-muted: #565f89;
 
+    --bdx-text: #fafafa;
     --bdx-panel: var(--bdx-secondary);
     --bdx-link: var(--bdx-primary-dimmed);
     --bdx-button-fg: var(--bdx-fg);
+    --bdx-button-fg-alt: var(--bdx-bg);
     --bdx-border: #2a2b3d;
     --bdx-card-radius: 12px;
 }
