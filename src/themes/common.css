@@ -130,8 +130,8 @@ div[data-testid^="feedItem-"] button {
 }
 
 /* Typically button icons */
-svg,
-svg path {
+button svg,
+button svg path {
     color: var(--bdx-primary) !important;
     fill: var(--bdx-primary) !important;
 }

@@ -1,13 +1,12 @@
 /**
- * Rolldown plugin that launches the PostCSS CLI asynchronously.
+ * Rolldown plugin that launches the PostCSS CLI.
  *
- * It:
- *   1. Registers every `src/themes/*.css` file as a watch file
- *      (so a change triggers a rebuild).
- *   2. Executes `postcss … --dir dist/themes …` once the bundle has been
+ * This is needed for rolldown since rolldown currently does not
+ * allow importing CSS and thus processing them as modules. So
+ * this plugin:
+ *   1. Registers every css in `options.srcDir` file as a watch file.
+ *   2. Executes `postcss` once the bundle has been
  *      resolved but before the output files are written.
- *
- * No synchronous APIs are used – the plugin is fully `async/await`‑friendly.
  */
 import { promisify } from "node:util";
 import { exec as execCallback } from "node:child_process";
@@ -18,15 +17,24 @@ import { performance } from "node:perf_hooks";
 
 const exec = promisify(execCallback);
 
+/**
+ * Rolldown plugin that launches the PostCSS CLI.
+ *
+ * @param {Object} [options] - Plugin options.
+ * @param {string} [options.include="\*.css"] - Source directory containing theme CSS files.
+ * @param {string} [options.out="dist"] - Output directory for processed CSS.
+ * @param {string} [options.config] - Path to the PostCSS configuration file. Defaults to the project's `postcss.config.js`.
+ * @returns {import('rolldown').Plugin} A Rolldown plugin that runs PostCSS on theme CSS files.
+ */
 export default async function postcssThemesPlugin(options = {}) {
   const {
-    srcDir = "src/themes",
-    outDir = "dist/themes",
+    include = "**/*.css",
+    out = "dist",
     config = resolve("postcss.config.js"),
   } = options;
 
   // Resolve the CSS files that belong to the theme directory.
-  const cssFiles = await glob(`${srcDir}/*.css`);
+  const cssFiles = await glob(`${include}`);
 
   return {
     name: "rolldown-plugin-postcss-cli",
@@ -36,8 +44,8 @@ export default async function postcssThemesPlugin(options = {}) {
       // Construct the CLI command.
       const cmd = [
         "postcss",
-        `${srcDir}/[!_]*.css`, // pattern for all theme files
-        `--dir ${outDir}`, // where to put the compiled CSS
+        `${include}`, // pattern for all theme files
+        `--dir ${out}`, // where to put the compiled CSS
         `--config ${config}`, // use the same config the user already has
         "--map", // generate sourcemaps
         "--minify", // minify the output (honours `minimize` in config)
@@ -59,7 +67,7 @@ export default async function postcssThemesPlugin(options = {}) {
         );
         console.info(
           `${chalk.green("✔")} [PostCSS] finished in ${chalk.green(`${measure.duration.toFixed(2)} ms`)} – output in`,
-          outDir,
+          out,
         );
       } catch (err) {
         console.error("\n❌  [PostCSS] failed:", err);

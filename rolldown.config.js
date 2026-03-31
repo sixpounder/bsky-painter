@@ -31,7 +31,10 @@ export default defineConfig([
         patterns: ["**/*.html", "*.css", "**/*.json", "**/icons/*.png"],
         rootDir: "./src",
       }),
-      postcssCli(),
+      postcssCli({
+        include: "src/themes/**/[!_]*.css",
+        out: "dist/themes",
+      }),
     ],
   },
 ]);
