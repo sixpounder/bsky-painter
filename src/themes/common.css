@@ -42,11 +42,12 @@ div[role="tab"]:hover {
     }
 }
 
-/* Right panel links */
+/* Right panel links and replies in the notifications tab */
 div[role="link"][style*="background-color"] {
     background-color: var(--bdx-primary-dimmed) !important;
     color: var(--bdx-primary-contrast) !important;
-    & div {
+    & div,
+    & a {
         color: var(--bdx-primary-contrast) !important;
     }
 }
@@ -180,6 +181,10 @@ div[role="dialog"] {
     & button[aria-label="Publish post"] {
         @mixin button primary;
     }
+
+    & button[aria-label="Publish reply"] {
+        @mixin button primary;
+    }
 }
 
 /* Scrollbars (Firefox) */
@@ -190,7 +195,7 @@ div[role="dialog"] {
 /* Improve contrast for interactive elements */
 a:hover,
 button:hover {
-    filter: brightness(1.05) !important;
+    filter: brightness(1.15) !important;
 }
 
 /* Ensure code blocks / pre are readable */
