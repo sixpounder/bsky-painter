@@ -137,6 +137,14 @@ button svg path {
     fill: var(--bdx-primary) !important;
 }
 
+/* Left nav icons */
+nav a svg,
+nav a svg path {
+    color: var(--bdx-primary) !important;
+    fill: var(--bdx-primary) !important;
+    filter: brightness(0.8) !important;
+}
+
 /* Muted text */
 small,
 .muted,
