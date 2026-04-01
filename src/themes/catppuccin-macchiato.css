@@ -37,6 +37,7 @@
     --bdx-fg: var(--cp-text);
     --bdx-muted: var(--cp-subtext0);
 
+    --bdx-text: var(--cp-text);
     --bdx-panel: var(--bdx-secondary);
     --bdx-link: var(--bdx-primary-dimmed);
     --bdx-button-fg: var(--bdx-fg);

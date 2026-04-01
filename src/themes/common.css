@@ -1,5 +1,6 @@
 @import "modules/_mixins.css";
 @import "modules/_normalize.css";
+@import "modules/_buttons_and_inputs.css";
 
 /* Base page */
 html,
@@ -93,49 +94,6 @@ a,
 a * {
     color: var(--bdx-link) !important;
     text-decoration-color: var(--bdx-link) !important;
-}
-
-/* Buttons and inputs */
-button,
-input,
-textarea,
-select {
-    background: transparent !important;
-    color: var(--bdx-button-fg) !important;
-    border-color: var(--bdx-border) !important;
-}
-
-/* Buttons */
-button {
-    @mixin button secondary, var(--bdx-button-fg);
-}
-
-button[aria-label="Create account"],
-button[aria-label="Create new account"],
-button[aria-label="Create an account"] {
-    @mixin button primary;
-}
-
-nav button[aria-label="Switch accounts"] {
-    background-color: transparent !important;
-    &:hover {
-        background-color: var(--bdx-secondary) !important;
-    }
-}
-
-nav button[aria-label="Compose new post"] {
-    @mixin button primary;
-}
-
-div[data-testid^="feedItem-"] button {
-    background-color: transparent !important;
-}
-
-/* Typically button icons */
-button svg,
-button svg path {
-    color: var(--bdx-primary) !important;
-    fill: var(--bdx-primary) !important;
 }
 
 /* Left nav icons */

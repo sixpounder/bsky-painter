@@ -1,0 +1,52 @@
+@import "_mixins.css";
+
+/* Buttons and inputs */
+button,
+input,
+textarea,
+select {
+    background: transparent !important;
+    color: var(--bdx-button-fg) !important;
+    border-color: var(--bdx-border) !important;
+}
+
+/* Buttons */
+button {
+    @mixin button secondary, var(--bdx-button-fg);
+}
+
+button[aria-label="Create account"],
+button[aria-label="Create new account"],
+button[aria-label="Create an account"] {
+    @mixin button primary;
+}
+
+nav button[aria-label="Switch accounts"] {
+    background-color: transparent !important;
+    &:hover {
+        background-color: var(--bdx-secondary) !important;
+    }
+}
+
+nav button[aria-label="Compose new post"] {
+    @mixin button primary;
+}
+
+div[data-testid^="feedItem-"] button {
+    background-color: transparent !important;
+}
+
+/* Buttons inside embedded video player */
+*[aria-label="Embedded video player"] button {
+    background: transparent !important;
+    & svg path {
+        fill: #fafafa !important;
+    }
+}
+
+/* Typically button icons */
+button:not([aria-label="Embedded video player"] button) svg,
+button:not([aria-label="Embedded video player"] button) svg path {
+    color: var(--bdx-primary) !important;
+    fill: var(--bdx-primary) !important;
+}

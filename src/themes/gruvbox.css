@@ -10,6 +10,7 @@
     --bdx-fg: #ebdbb2;
     --bdx-muted: #a89984;
 
+    --bdx-text: #fafafa;
     --bdx-panel: var(--bdx-secondary);
     --bdx-link: var(--bdx-primary-dimmed);
     --bdx-button-fg: var(--bdx-fg);
