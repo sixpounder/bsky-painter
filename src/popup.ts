@@ -3,6 +3,14 @@ import browser from "webextension-polyfill";
 const form = document.getElementById("theme-form") as HTMLFormElement;
 const themeRadios = document.querySelectorAll('input[name="theme"]');
 
+function detectBrowser(): "firefox" | "chrome" | "safari" | "unknown" {
+  const ua = navigator.userAgent;
+  if (ua.includes("Firefox")) return "firefox";
+  if (ua.includes("Chrome") || ua.includes("Chromium")) return "chrome";
+  if (ua.includes("Safari") && !ua.includes("Chrome")) return "safari";
+  return "unknown";
+}
+
 /**
  * Checks if a URL is allowed by the extension's host permissions.
  */
@@ -70,6 +78,10 @@ function localizePage() {
   });
 }
 
+function addBaseClasses() {
+  document.body.classList.add(detectBrowser());
+}
+
 // Connect to the background script
 const port = browser.runtime.connect({ name: "popup" });
 
@@ -97,5 +109,7 @@ browser.storage.local.get("theme").then((res) => {
 themeRadios.forEach((radio) => {
   radio.addEventListener("change", handleThemeChange);
 });
+
+addBaseClasses();
 
 localizePage();

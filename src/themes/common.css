@@ -1,4 +1,5 @@
-@import "_mixins.css";
+@import "modules/_mixins.css";
+@import "modules/_normalize.css";
 
 /* Base page */
 html,
