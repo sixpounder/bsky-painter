@@ -44,9 +44,20 @@ div[data-testid^="feedItem-"] button {
     }
 }
 
+/* Buttons inside embedded image preview in compose view */
+*[data-testid="selectedPhotosView"] {
+    & button {
+        @mixin button secondary, var(--bdx-button-fg);
+    }
+
+    & button[aria-label="Add alt text"] {
+        background: transparent !important;
+    }
+}
+
 /* Typically button icons */
-button:not([aria-label="Embedded video player"] button) svg,
-button:not([aria-label="Embedded video player"] button) svg path {
-    color: var(--bdx-primary) !important;
-    fill: var(--bdx-primary) !important;
+:not([aria-label="Embedded video player"] button) svg,
+:not([aria-label="Embedded video player"] button) svg path {
+    color: var(--bdx-primary);
+    fill: var(--bdx-primary);
 }
